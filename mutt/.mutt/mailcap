@@ -1,0 +1,11 @@
+text/html; iceweasel %s > /dev/null 2>&1 & sleep 2; test=test -n "$DISPLAY"; nametemplate=%s.html;
+text/html; w3m -I %{charset} -T text/html; copiousoutput;
+application/pdf; evince %s > /dev/null 2>&1 & sleep 2
+application/odt; libreoffice %s > /dev/null 2>&1 & sleep 2
+application/ods; libreoffice %s > /dev/null 2>&1 & sleep 2
+application/msword; libreoffice %s > /dev/null 2>&1 & sleep 2
+application/vnd.oasis.opendocument.text; libreoffice %s > /dev/null 2>&1 & sleep 2
+image/*; gpicview %s > /dev/null 2>&1 & sleep 2
+audio/*; mplayer %s > /dev/null 2>&1 & sleep 2
+video/*; mplayer %s > /dev/null 2>&1 & sleep 2
+text/*; vim %s > /dev/null 2>&1 sleep 2

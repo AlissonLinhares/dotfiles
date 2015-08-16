@@ -1,0 +1,89 @@
+set imap_check_subscribed
+set imap_keepalive = 300
+set ssl_starttls = yes
+set ssl_force_tls = yes
+set record = ""
+set mail_check = 120
+set timeout = 120
+
+# Grouping e-mails by conversation/thread
+set sort = threads
+set sort_aux = last-date-received
+
+# Configuring view
+set menu_scroll
+set tilde
+set pager_index_lines = 10
+set pager_context = 3
+set help = yes
+
+# Save copies of sent messages
+set copy = yes
+set delete = yes
+
+# Do not ask for confirmation
+set fast_reply = yes
+set include = yes
+set quit = no
+set postpone = ask-no
+set wait_key = no
+set confirmappend = no
+set move = no
+
+# Set the default cache directory
+set message_cache_clean = yes
+set message_cachedir = "~/.mutt/cache/bodies"
+set certificate_file = "~/.mutt/certificates"
+set header_cache = "~/.mutt/cache/headers"
+set news_cache_dir = "~/.mutt/cache/news"
+set tmpdir = "~/.mutt/tmp"
+set mailcap_path = "~/.mutt/mailcap"
+set new_mail_command = "bash ~/.mutt/notify.sh"
+
+# Configure aliases
+set alias_file = "~/.mutt/aliases"
+set sort_alias = alias
+set reverse_alias = yes
+
+# Configure sidebar
+set sidebar_width = 30
+set sidebar_visible = yes
+set sidebar_format = "%B%?F? [%F]?/"
+set date_format = "%d/%m/%y %T"
+set index_format = "%2C | %Z [%d] %-30.30F (%-4.4c) %s"
+set editor = "vim"
+set charset = "utf-8"
+set use_from = yes
+set envelope_from = yes
+set mbox_type = "Maildir"
+set crypt_use_gpgme = no
+
+# use w3m only when no text version is available
+auto_view text/html
+alternative_order text/plain text/enriched text/html
+
+# "index": list the emails of an opened folder, it's the main mode.
+# "pager": display a selected e-mail.
+# "attach": list the parts of MIME attachments.
+# "compose": set up a new email to be sent out.
+# "browser": directory listing when searching for folder to change to.  s sort-mailbox
+# vi like keybindings.
+bind editor <space> noop
+bind pager j next-line
+bind pager k previous-line
+bind pager gg top
+bind pager G bottom
+bind index o display-message
+bind index,pager <tab> next-undeleted
+bind index,pager <backtab> previous-undeleted
+bind attach,index gg first-entry
+bind attach,index G last-entry
+bind editor <delete> backspace
+bind index,pager \Cp sidebar-prev
+bind index,pager \Cn sidebar-next
+bind index,pager \Co sidebar-open
+bind attach,index,pager R group-reply
+
+source ~/.mutt/color
+source ~/.mutt/gmail
+source $alias_file

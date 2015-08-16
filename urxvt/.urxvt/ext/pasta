@@ -1,0 +1,10 @@
+#! /usr/bin/env perl -w
+use strict;
+
+sub on_user_command {
+  my ($self, $cmd) = @_;
+  if ($cmd eq "pasta:paste") {
+    $self->selection_request (urxvt::CurrentTime, 3);
+  }
+  ()
+}

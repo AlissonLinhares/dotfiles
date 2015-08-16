@@ -1,0 +1,83 @@
+source! ~/.vimperatorrc.local
+
+" Configurando o vimperator
+javascript liberator.beep = function() { return false; }
+
+set gui=noaddons,nobookmarks,nomenu,nonavigation
+" set gui=noaddons,nobookmarks,nomenu,notabs
+set errorbells=false
+set hintchars=asdfghjklqwertyuiopzxcvbnmASDFGHJKLQWERTYUIOPZXCVBNM
+set editor="gnome-terminal --disable-factory -x vim"
+
+" Esquema de cores e fonts
+highlight Hint font-size:110%;color:white;background-color:red;padding:0px;
+
+" Configurando a tecla leader
+let mapleader = "\"
+
+" Usando tab para mover entre as abas
+map <tab> gt
+map <s-tab> gT
+map <left> L
+map <right> H
+
+" Usando o google como o motor de busca
+map s :open<space>google<space>
+map S :tabopen<space>google<space>
+imap <C-s> <C-c><esc>:tabopen<space><C-v><cr>
+map <C-s> <C-c><esc>:tabopen<space><C-v><cr>
+
+" Melhorando a movimentação
+nnoremap <c-j> <c-d>
+nnoremap <c-k> <c-u>
+nnoremap } <c-d>
+nnoremap { <c-u>
+nnoremap j 4j
+nnoremap k 4k
+nnoremap h 4h
+nnoremap l 4l
+nnoremap <a-j> <c-d>
+nnoremap <a-k> <c-u>
+
+" Alterando comportamentos indesejáveis
+inoremap <esc> <esc><esc>
+inoremap <C-a> <Ins><C-a><Ins>
+
+" Função para buscar textos em sites
+javascript function websearch( cmd, url, query ) { liberator.execute(":"+cmd+" "+url+query.split(" ").join("+")); }
+command! websearch javascript websearch( cmd, url, query )
+
+" Lista de atalhos mais frequentes
+nnoremap ot :javascript websearch("open","https://translate.google.com.br/?hl=pt-BR#en/pt/","")<left><left>
+nnoremap tt :javascript websearch("tabopen","https://translate.google.com.br/?hl=pt-BR#en/pt/","")<left><left>
+nnoremap oy :javascript websearch("open","www.youtube.com/results?search_query=","")<left><left>
+nnoremap ty :javascript websearch("tabopen","www.youtube.com/results?search_query=","")<left><left>
+nnoremap op :javascript websearch("open","https://thepiratebay.se/search/","")<left><left>
+nnoremap tp :javascript websearch("tabopen","https://thepiratebay.se/search/","")<left><left>
+nnoremap ol :javascript websearch("open","www.letras.mus.br/?q=","")<left><left>
+nnoremap tl :javascript websearch("tabopen","www.letras.mus.br/?q=","")<left><left>
+nnoremap ow :javascript websearch("open","https://en.wikipedia.org/w/index.php?search=","")<left><left>
+nnoremap tw :javascript websearch("tabopen","https://en.wikipedia.org/w/index.php?search=","")<left><left>
+nnoremap oi :javascript websearch("open","http://www.imdb.com/find?ref_=nv_sr_fn&q=","&s=all")<left><left><left><left><left><left>
+nnoremap ti :javascript websearch("tabopen","http://www.imdb.com/find?ref_=nv_sr_fn&q=","&s=all")<left><left><left><left><left><left><left><left>
+nnoremap oc :open    www.comoeumesintoquando.tumblr.com<cr>
+nnoremap tc :tabopen www.comoeumesintoquando.tumblr.com<cr>
+nnoremap on :open    www.naointendo.com.br<cr>
+nnoremap tn :tabopen www.naointendo.com.br<cr>
+nnoremap oa :open    www.ahnegao.com.br<cr>
+nnoremap ta :tabopen www.ahnegao.com.br<cr>
+nnoremap o9 :open    www.9gag.com<cr>
+nnoremap t9 :tabopen www.9gag.com<cr>
+nnoremap or :open    http://feedreader.com/online/#/reader/category/all/<cr>
+nnoremap tr :tabopen http://feedreader.com/online/#/reader/category/all/<cr>
+nnoremap og :open    www.gmail.com<cr>
+nnoremap tg :tabopen www.gmail.com<cr>
+nnoremap of :open    www.facebook.com<cr>
+nnoremap tf :tabopen www.facebook.com<cr>
+nnoremap oh :open    www.hotmail.com<cr>
+nnoremap th :tabopen www.hotmail.com<cr>
+
+" Algumas abreviações úteis.
+ia hmail alisson_linhares@hotmail.com
+ia gmail arescarv@gmail.com
+ia fmail arescarv@facebook.com

@@ -1,0 +1,32 @@
+URxvt.perl-ext: default,selection-to-clipboard,pasta,matcher,keyboard-select
+
+URxvt.foreground: #AAAAAA
+URxvt.background: #000000
+URxvt.color12: rgb:5c/5c/ff
+
+URxvt.font: xft:monospace:pixelsize=14
+URxvt.boldFont: xft:monospace:bold:pixelsize=14
+URxvt.letterSpace: -1
+
+URxvt.saveLines: 65536
+URxvt.matcher.button: 1
+URxvt.url-launcher: /usr/bin/iceweasel
+URxvt.underlineURLs: true
+URxvt.clipboard.autocopy: true
+URxvt.scrollBar: false
+URxvt.scrollBar_right: false
+URxvt.scrollTtyOutput: false
+URxvt.scrollWithBuffer: true
+URxvt.scrollTtyKeypress: true
+URxvt.iso14755: false
+URxvt.iso14755_52: false
+URxvt.print-pipe: cat > /tmp/urxvt.dump
+URxvt.scrollstyle: plain
+URxvt.fading: 15
+
+URxvt.keysym.Shift-Up: command:\033]720;1\007
+URxvt.keysym.Shift-Down: command:\033]721;1\007
+URxvt.keysym.M-Escape: perl:keyboard-select:activate
+URxvt.keysym.M-s: perl:keyboard-select:search
+URxvt.keysym.Control-Shift-V: perl:pasta:paste
+URxvt.keysym.M-u: matcher:list

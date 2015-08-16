@@ -1,0 +1,17 @@
+vim/.vim/doc
+vim/.vim/.viminfo*
+vim/.vim/viminfo*
+vim/.vim/.netrwhist
+vim/plugin/youcompleteme.vim
+vim/autoload/youcompleteme.vim
+mutt/.mutt/aliases
+mutt/.mutt/gmail
+mutt/.mutt/certificates
+mutt/.mutt/cache/*
+mutt/.mutt/tmp/*
+ranger/bookmarks
+ranger/history
+ranger/scope.sh
+ranger/tagged
+newsbeuter/.newsbeuter/cache.db
+newsbeuter/.newsbeuter/history.*

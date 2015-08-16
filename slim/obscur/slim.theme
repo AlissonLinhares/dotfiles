@@ -1,0 +1,30 @@
+msg_color               #FFFFFF
+msg_font                Monospace:size=12:bold:dpi=75
+msg_x                   50%
+msg_y                   40%
+msg_shadow_color #FFFFFF
+msg_shadow_xoffset 1
+msg_shadow_yoffset 1
+
+background_style        stretch
+background_color        #000000
+
+input_panel_x           50%
+input_panel_y           50%
+input_name_x            200
+input_name_y            90
+input_font              Monospace:size=11:dpi=75
+input_color             #FFFFFF
+
+username_font           Monospace:size=12:bold:dpi=75
+username_color          #FFFFFF
+username_x              125
+username_y              90
+password_x              125
+password_y              90
+username_shadow_color   #000000
+username_shadow_xoffset 1
+username_shadow_yoffset 1
+
+username_msg            Username:
+password_msg            Password:
